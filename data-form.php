@@ -1,8 +1,6 @@
 <?php
 include('./components/navbar.php');
 
-$data = new DataController();
-$rows = $data->listOfRowNameWithId($tableUrl, $id);
 
 ?>
 
