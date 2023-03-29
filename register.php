@@ -9,7 +9,7 @@ if (isset($_POST['send'])) {
 
 ?>
 <div class="mx-auto" style="width: 70vw; margin-top: 2rem;">
-    <h1>Login</h1><br>
+    <h1>Register</h1><br>
     <form style="margin-bottom: 2rem;" method="post">
     <div class="form-group">
         <label for="firstname">First name</label>

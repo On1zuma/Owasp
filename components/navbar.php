@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">Owasp</a>
   <ul class="navbar-nav mr-auto" style="display:flex; flex-direction:row; gap:1rem;">
 
