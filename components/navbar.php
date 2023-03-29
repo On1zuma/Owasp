@@ -1,4 +1,7 @@
 <?php
+require_once 'Controller/loginController.php';
+require_once 'Controller/registerController.php';
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
