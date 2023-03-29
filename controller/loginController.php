@@ -55,7 +55,7 @@ class LoginController
 
             $password = $this->crypte($password);
 
-            $getUsers = $this->bdd->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+            $getUsers = $this->bdd->prepare('SELECT * FROM identifier WHERE username = ? AND password = ?');
             $getUsers->execute(array($login, $password));
 
             if ($getUsers->rowCount() > 0) {

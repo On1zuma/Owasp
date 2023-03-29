@@ -21,7 +21,7 @@ if (isset($_POST['send'])) {
     </div>
         <button type="submit" class="btn btn-primary" name="send">Submit</button>
     </form>
-    login : test ;
-    password : test
+    login : test1 ;
+    password : test1
 </body>
 </html>

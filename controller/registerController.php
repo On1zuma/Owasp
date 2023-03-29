@@ -39,13 +39,19 @@ class RegisterController
 
             $password = $this->crypte($password);
 
-            $checkUsers = $this->bdd->prepare('SELECT * FROM users WHERE username = ? OR email = ?');
-            $checkUsers->execute(array($username, $email));
+            $checkUsers = $this->bdd->prepare('SELECT * FROM identifier WHERE username = ?');
+            $checkUsers->execute(array($username));
 
             if ($checkUsers->rowCount() == 0) {
-                $insertUser = $this->bdd->prepare('INSERT INTO users (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)');
-                $insertUser->execute(array($firstname, $lastname, $username, $email, $password));
-                $_SESSION['user_id'] = $this->bdd->lastInsertId();
+                $insertId = $this->bdd->prepare('INSERT INTO identifier (password, username) VALUES (?, ?)');
+                $insertId->execute(array($password, $username));
+
+                $id = $this->bdd->lastInsertId();
+                var_dump($id);
+                $insertUser = $this->bdd->prepare('INSERT INTO users (firstname, lastname, email, user_id) VALUES (?, ?, ?, ?)');
+                $insertUser->execute(array($firstname, $lastname, $email, $id));
+
+                $_SESSION['user_id'] = $id;
                 $_SESSION['pseudonyme'] = $username;
                 header('Location: dashboard.php');
             } else {
