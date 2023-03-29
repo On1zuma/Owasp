@@ -1,1 +1,6 @@
-OK GG
+<?php
+
+include('./components/navbar.php');
+?>
+
+DASHBOARD
